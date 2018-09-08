@@ -1,3 +1,88 @@
-<p>
-  garbage-analysis works!
-</p>
+<!-- <div class="row">
+  <div class="col-xs-12 col-12 col-sm-6 mb-3">
+    <div class="btn-group" dropdown>
+      <button id="button-autoclose1" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+              aria-controls="dropdown-autoclose1">
+              根据时间 <span class="caret"></span>
+      </button>
+      <ul id="dropdown-autoclose1" *dropdownMenu class="dropdown-menu"
+          role="menu" aria-labelledby="button-autoclose1">
+        <li role="menuitem"><a class="dropdown-item" href="#">周</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">月</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-xs-12 col-12 col-sm-6 mb-3">
+    <div class="btn-group" dropdown [autoClose]="false">
+      <button id="button-autoclose2" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+              aria-controls="dropdown-autoclose2">
+              根据分类<span class="caret"></span>
+      </button>
+      <ul id="dropdown-autoclose2" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-autoclose2">
+        <li role="menuitem"><a class="dropdown-item" href="#">可回收垃圾</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">厨余垃圾</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">有害垃圾</a></li>
+        <li role="menuitem"><a class="dropdown-item" href="#">其他垃圾</a></li>
+      </ul>
+    </div>
+  </div>
+</div> -->
+<!-- <div>
+  <tabset>
+    <tab heading="根据时间" id="tab1" (select)="onSelect($event)">
+      <tabset [vertical]="true" type="pills">
+        <tab heading="周">周</tab>
+        <tab heading="月">月</tab>
+      </tabset>
+    </tab>
+    <tab heading="根据分类" (select)="onSelect($event)">
+        <tabset [vertical]="true" type="pills">
+          <tab heading="可回收垃圾">可回收垃圾</tab>
+          <tab heading="厨余垃圾">厨余垃圾</tab>
+          <tab heading="有害垃圾">有害垃圾</tab>
+          <tab heading="其他垃圾">其他垃圾</tab>
+      </tabset>
+    </tab>
+  </tabset>
+</div> -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <form class="form-horizontal" #loginForm="ngForm">
+        <div class="form-group" *ngIf="!showCategory">
+          <div class="col-sm-10">
+            <div class="form-group">
+              <label for="name">总类别</label>
+              <angular2-multiselect [data]="generalCategoryList" [(ngModel)]="formModel.generalCate" [settings]="settings" (onSelect)="onItemSelect($event)"
+                name="generalCate">
+              </angular2-multiselect>
+            </div>
+          </div>
+        </div>
+        <div class="form-group" *ngIf="!showCategory">
+          <div class="col-sm-10">
+            <div class="form-group">
+              <label for="name">子分类</label>
+              <angular2-multiselect [data]="subcategoryList" [(ngModel)]="formModel.subCate" [settings]="settings" (onSelect)="onItemSelect($event)"
+                name="subCate">
+              </angular2-multiselect>
+            </div>
+          </div>
+        </div>
+        <div class="form-group" *ngIf="!showDate">
+          <div class="col-xs-12 col-12 col-md-4 form-group">
+            <label for="date">选择时间</label>
+            <input type="text" id="date" placeholder="Datepicker" class="form-control" bsDatepicker
+            [bsConfig]="{ dateInputFormat: 'YYYY-MM-DD' }" name="searDate" [(ngModel)]="formModel.searchDate">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="button" class="btn btn-primary btn-block" (click)="search()">查询</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

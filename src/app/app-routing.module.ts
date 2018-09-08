@@ -1,16 +1,23 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { GarbageListComponent } from './garbage-list/garbage-list.component';
 import { AddGarbageComponent } from './add-garbage/add-garbage.component';
 import { GarbageAnalysisComponent } from './garbage-analysis/garbage-analysis.component';
+import { HistogramComponent } from './garbage-analysis/histogram/histogram.component';
+import { LineChartComponent } from './garbage-analysis/line-chart/line-chart.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/garbageList', pathMatch: 'full' },
   { path: 'garbageList', component: GarbageListComponent },
   { path: 'addGarbage', component: AddGarbageComponent },
-  { path: 'dataAnalysis', component: GarbageAnalysisComponent }
+  { path: 'dataAnalysis', component: GarbageAnalysisComponent },
+  { path: 'dataAnalysisByCategory/:condition', component: GarbageAnalysisComponent },
+  { path: 'dataAnalysisByDate/:condition', component: GarbageAnalysisComponent },
+  { path: 'histogram', component: HistogramComponent },
+  { path: 'lineChart', component: LineChartComponent },
+  { path: 'histogram/:condition', component: HistogramComponent },
+  { path: 'lineChart/:condition', component: LineChartComponent }
 ];
 
 @NgModule({

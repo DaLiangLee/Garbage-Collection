@@ -1,15 +1,24 @@
 
-<!-- <div class="row">
-  <div class="col-md-4">.col-md-4</div>
-  <div class="col-md-4">.col-md-4</div>
-  <div class="col-md-4">.col-md-4</div>
-</div> -->
 <link rel="stylesheet" href="https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css">
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
-    <a routerLink="/garbageList">Garbage List</a>
-    <a routerLink="/addGarbage">Add Garbage</a>
-    <a routerLink="/dataAnalysis">Analysis</a>
+    <a routerLink="/garbageList" class="btn btn-primary mb-3">Garbage List</a>
+    <a routerLink="/addGarbage" class="btn btn-primary mb-3">Add Garbage</a>
+    <!-- <a routerLink="/dataAnalysis" class="mb-3">Analysis</a> -->
+    <div class="btn-group" dropdown>
+      <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+              mb-3
+              aria-controls="dropdown-basic">
+              Analysis <span class="caret"></span>
+      </button>
+      <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+          role="menu" aria-labelledby="button-basic">
+        <li role="menuitem"><a class="dropdown-item"  routerLinkActive="active" routerLink="/dataAnalysisByDate/date">时间</a></li>
+        <li class="divider dropdown-divider"></li>
+        <li role="menuitem"><a class="dropdown-item"  routerLinkActive="active" routerLink="/dataAnalysisByCategory/category">分类</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
+<br>
 <router-outlet></router-outlet>
