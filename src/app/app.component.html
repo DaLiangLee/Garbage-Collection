@@ -1,24 +1,32 @@
-
 <link rel="stylesheet" href="https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css">
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <a routerLink="/garbageList" class="btn btn-primary mb-3">Garbage List</a>
-    <a routerLink="/addGarbage" class="btn btn-primary mb-3">Add Garbage</a>
-    <!-- <a routerLink="/dataAnalysis" class="mb-3">Analysis</a> -->
-    <div class="btn-group" dropdown>
-      <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
-              mb-3
-              aria-controls="dropdown-basic">
-              Analysis <span class="caret"></span>
-      </button>
-      <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
-          role="menu" aria-labelledby="button-basic">
-        <li role="menuitem"><a class="dropdown-item"  routerLinkActive="active" routerLink="/dataAnalysisByDate/date">时间</a></li>
-        <li class="divider dropdown-divider"></li>
-        <li role="menuitem"><a class="dropdown-item"  routerLinkActive="active" routerLink="/dataAnalysisByCategory/category">分类</a></li>
-      </ul>
-    </div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLinkActive="active" routerLink="/garbageList" class="nav-link">回收垃圾列表</a>
+      </li>
+      <li class="nav-item">
+        <a routerLinkActive="active" routerLink="/addGarbage" class="nav-link">添加回收垃圾</a>
+      </li>
+      <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            数据分析
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a routerLinkActive="active" class="dropdown-item" routerLink="/dataAnalysisByDate/date">时间</a>
+            <div class="dropdown-divider"></div>
+            <a routerLinkActive="active" class="dropdown-item" routerLink="/dataAnalysisByCategory/category">分类</a>
+          </div>
+        </li>
+    </ul>
   </div>
 </nav>
+
 <br>
 <router-outlet></router-outlet>

@@ -1,32 +1,31 @@
-<div class="table-responsive">
-  <table class="table table-bordered table-hover">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>回收类别</th>
-        <th>回收名称</th>
-        <th>回收数量</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-      </tr>
-    </tbody>
-  </table>
-</div><!-- /.table-responsive -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-12">
+      <div class="content-wrapper">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <!-- <th>#</th> -->
+                <th>回收类别</th>
+                <th>回收时间</th>
+                <th>回收数量</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let content of returnedArray">
+                <!-- <th scope="row">{{content}}</th> -->
+                <td>Table cell{{content}}</td>
+                <td>Table cell{{content}}</td>
+                <td>Table cell{{content}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <pagination [totalItems]="contentArray.length" (pageChanged)="pageChanged($event)"></pagination>
+    </div>
+  </div>
+
+</div>
