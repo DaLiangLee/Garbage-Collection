@@ -1,0 +1,19 @@
+<div class="card card-accent-info">
+  <div class="card-body">
+    <h4 class="card-title">Use (chartInit) to get echartsInstance</h4>
+    <div class="mt-4">
+        <div class="row">
+          <div class="col-md-6">
+            <!-- <p><button class="btn btn-outline-primary" (click)="getWidth()">getWidth()</button></p>
+            <p><button class="btn btn-outline-primary" (click)="getHeight()">getHeight()</button></p>
+            <p><button class="btn btn-outline-primary" (click)="getDom()">getDom()</button></p>
+            <p><button class="btn btn-outline-primary" (click)="getOption()">getOption()</button></p>
+            <p><button class="btn btn-outline-danger" (click)="clear()">clear()</button></p> -->
+          </div>
+          <div class="col-md-6">
+            <div echarts [options]="options" (chartInit)="onChartInit($event)" class="demo-chart"></div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

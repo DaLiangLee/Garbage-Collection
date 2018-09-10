@@ -18,6 +18,7 @@ import { HistogramComponent } from './garbage-analysis/histogram/histogram.compo
 import {TabsModule} from 'ngx-bootstrap';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { PieChartComponent } from './garbage-analysis/pie-chart/pie-chart.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     AddGarbageComponent,
     GarbageAnalysisComponent,
     LineChartComponent,
-    HistogramComponent
+    HistogramComponent,
+    PieChartComponent
   ],
   imports: [
     BrowserModule,
