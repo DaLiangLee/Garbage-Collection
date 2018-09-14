@@ -8,6 +8,10 @@ import { HistogramComponent } from './garbage-analysis/histogram/histogram.compo
 import { LineChartComponent } from './garbage-analysis/line-chart/line-chart.component';
 import { PieChartComponent } from './garbage-analysis/pie-chart/pie-chart.component';
 
+import { HomeComponent } from './components/home/home.component';
+import { TvNetworkFormComponent } from './components/tv-network-form/tv-network-form.component';
+import { TvNetworkListComponent } from './components/tv-network-list/tv-network-list.component';
+
 const routes: Routes = [
   { path: '', redirectTo: 'garbageList', pathMatch: 'full' },
   { path: 'garbageList', component: GarbageListComponent },
@@ -20,7 +24,13 @@ const routes: Routes = [
   { path: 'pieChart', component: PieChartComponent },
   { path: 'histogram/:condition', component: HistogramComponent },
   { path: 'lineChart/:condition', component: LineChartComponent },
-  { path: 'pieChart/:condition', component: PieChartComponent }
+  { path: 'pieChart/:condition', component: PieChartComponent },
+
+  { path: 'home', component: HomeComponent },
+  { path: 'tvnetworks', component: TvNetworkListComponent },
+  { path: 'tvnetworks/new', component: TvNetworkFormComponent },
+  { path: 'tvnetworks/edit/:id', component: TvNetworkFormComponent },
+
 ];
 
 @NgModule({

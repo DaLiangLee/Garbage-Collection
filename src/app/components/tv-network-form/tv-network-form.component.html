@@ -1,0 +1,23 @@
+<h1>
+  <span *ngIf="id">编辑</span>
+  <span *ngIf="!id">添加</span> 电视台</h1>
+<form (ngSubmit)="submit(form)" #form="ngForm" [ngBusy]="busy" *ngIf="model">
+  <div class="form-group">
+    <label for="name">名称</label>
+    <input type="text" name="name" id="name" class="form-control" [(ngModel)]="model.name" #name="ngModel" required minlength="2"
+      maxlength="10" [class.is-invalid]="name.invalid && (name.touched || name.dirty)">
+    <div class="invalid-feedback" *ngIf="name.invalid && (name.touched || name.dirty)">
+      <div *ngIf="name.errors.required">名称是必填项</div>
+      <div *ngIf="name.errors.minlength">名称的长度不能小于2</div>
+    </div>
+  </div>
+  <fieldset>
+    <legend>电视剧:</legend>
+    <!-- <div class="form-group">
+      <app-tv-shows-table [shows]="model.tvShows" #tvShowTable></app-tv-shows-table>
+    </div> -->
+  </fieldset>
+  <button class="btn btn-primary" [disabled]="form.invalid">提交</button>
+  <button class="btn btn-outline-secondary ml-2" type="button" routerLink="/tvnetworks">退回</button>
+</form>
+<br> {{model | json}}

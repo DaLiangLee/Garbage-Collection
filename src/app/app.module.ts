@@ -19,7 +19,18 @@ import {TabsModule} from 'ngx-bootstrap';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { PieChartComponent } from './garbage-analysis/pie-chart/pie-chart.component';
+import { TvNetworkListComponent } from './components/tv-network-list/tv-network-list.component';
+import { TvNetworkFormComponent } from './components/tv-network-form/tv-network-form.component';
+import { HomeComponent } from './components/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 
+import { TvShowsTableComponent } from './components/tv-shows-table/tv-shows-table.component';
+import { TvNetworkDetailComponent } from './components/tv-network-detail/tv-network-detail.component';
+
+import {BusyModule} from 'angular2-busy';
+import { TvNetworkService } from 'src/app/services/tv-network.service';
+import { ToastrModule } from 'ngx-toastr';
+// import { TvNetworkService } from './services/tv-network.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +40,12 @@ import { PieChartComponent } from './garbage-analysis/pie-chart/pie-chart.compon
     GarbageAnalysisComponent,
     LineChartComponent,
     HistogramComponent,
-    PieChartComponent
+    PieChartComponent,
+    TvNetworkListComponent,
+    TvNetworkFormComponent,
+    HomeComponent,
+    TvShowsTableComponent,
+    TvNetworkDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -42,8 +58,11 @@ import { PieChartComponent } from './garbage-analysis/pie-chart/pie-chart.compon
     PaginationModule.forRoot(),
     AngularMultiSelectModule,
     NgxEchartsModule,
+    HttpClientModule,
+    BusyModule,
+    ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [TvNetworkService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

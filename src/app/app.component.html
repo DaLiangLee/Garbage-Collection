@@ -15,15 +15,27 @@
         <a routerLinkActive="active" routerLink="/addGarbage" class="nav-link">添加回收垃圾</a>
       </li>
       <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            数据分析
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a routerLinkActive="active" class="dropdown-item" routerLink="/dataAnalysisByDate/date">时间</a>
-            <div class="dropdown-divider"></div>
-            <a routerLinkActive="active" class="dropdown-item" routerLink="/dataAnalysisByCategory/category">分类</a>
-          </div>
-        </li>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          数据分析
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a routerLinkActive="active" class="dropdown-item" routerLink="/dataAnalysisByDate/date">时间</a>
+          <div class="dropdown-divider"></div>
+          <a routerLinkActive="active" class="dropdown-item" routerLink="/dataAnalysisByCategory/category">分类</a>
+        </div>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/tvnetworks">Tv Network
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="/tvnetworks/new">Add Tv Network
+          <span class="sr-only">(current)</span>
+        </a>
     </ul>
   </div>
 </nav>
